@@ -14,6 +14,7 @@ int menu_no_get(void) {
 
 // メイン関数
 int main(void) {
+
 	Gakusei gakusei[MAX_REC];
 	int cunt = 1;
 
@@ -65,16 +66,17 @@ void g_out_menu(Gakusei *gakusei, int cunt) {
 	printf("　メインメニューに戻る：９\n");
 	printf("処理番号を選択してください：");
 	int num;
-	while (scanf_s("%d", &num) != '9') {
+	while (true) {
+		scanf_s("%d", &num);
 		switch (num) {
-		case 1:
-			sort_gakusei_bubble(num, gakusei, cunt);
+		case 1: // 学籍番号順にソートする
+			//sort_gakusei_bubble(num, gakusei, cunt);
 			break;
 		case 2:
-			sort_gakusei_bubble(num, gakusei, cunt);
+			//sort_gakusei_bubble(num, gakusei, cunt);
 			break;
 		case 3:
-			sort_gakusei_bubble(num, gakusei, cunt);
+			//sort_gakusei_bubble(num, gakusei, cunt);
 			break;
 		case 9:
 			return;
@@ -106,13 +108,14 @@ void g_srch_menu(Gakusei *gakusei, int cunt) {
 	printf("９：メインメニューに戻る");
 	printf("------------------------------------\n");
 	Gakusei key_gakusei; // 探したい学生キー
-	int key; scanf_s("%d", &key);
-	while (scanf_s("%d", &key) != 9) {
+	int key;
+	while (true) {
+		scanf_s("%d", &key);
 		char buff[300];
 		switch (key) {
 		case 1:
 			printf("学籍番号を入力してください：");
-			int gakuno; scanf("%d", &gakuno);
+			int gakuno; scanf_s("%d", &gakuno);
 			key_gakusei.gakuno = gakuno;
 		case 2:
 			printf("性カナを入力してください：");
@@ -153,22 +156,21 @@ void g_srch_menu(Gakusei *gakusei, int cunt) {
 			return;
 			break;
 		default:
-			printf("不正なキー識別番号です\n");
 			break;
 		}
 	}
 
 	printf("探索アルゴリズムを選択してください。(線形探索：1, 二分探索：2)\n");
 	int method; // 1で線形探索、2で二分探索
-	scanf_s("%d", method); // 1か2入力
+	scanf_s("%d", &method); // 1か2入力
 	switch (method) {
 	case 1:  // 線形探索で先頭から順番にkey_gakusei情報に合致する学生レコードを探す
-		int pos = srch_gakusei_line(key, gakusei, 0, cunt-1, key_gakusei);
-		disp_gakusei_record(gakusei[pos]); // 検索結果の学生レコード表示
+		//srch_gakusei_line(key, gakusei, 0, cunt-1, key_gakusei);
+		//disp_gakusei_record(gakusei[pos]); // 検索結果の学生レコード表示
 		break;
 	case 2:  // 二分探索でkey_gakusei情報に合致する学生レコードを探す
-		int pos = srch_gakusei_bin(key, gakusei, 0, cunt-1, key_gakusei);
-		disp_gakusei_record(gakusei[pos]); // 検索結果の学生レコード表示
+		//srch_gakusei_bin(key, gakusei, 0, cunt-1, key_gakusei);
+		//disp_gakusei_record(gakusei[pos]); // 検索結果の学生レコード表示
 		break;
 	default:
 		printf("1か2で選択しろ\n");
