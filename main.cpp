@@ -66,12 +66,12 @@ void g_out_menu(Gakusei *gakusei, int cunt) {
 	printf("　メインメニューに戻る：９\n");
 	printf("処理番号を選択してください：");
 	
-	// ココかえたよ！！！！！！！！！！！！！！！！！
 	int num;
 	while (true) {
 		scanf_s("%d", &num);
 		if (num == 1 || num == 2 || num == 3) {
 			sort_gakusei_bubble(num, gakusei, cunt);
+			break;
 		}
 		else if (num == 9) {
 			return;
@@ -80,7 +80,6 @@ void g_out_menu(Gakusei *gakusei, int cunt) {
 			printf("1~3もしくは9を入力してください\n");
 		}
 	}
-	// ココまで！！！！！！！！！！！！！！！！！！！
 
 	int i = 0;
 	char title[100] = "＜＜＜学生情報一覧＞＞＞";
