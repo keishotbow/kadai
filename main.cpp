@@ -70,13 +70,13 @@ void g_out_menu(Gakusei *gakusei, int cunt) {
 		scanf_s("%d", &num);
 		switch (num) {
 		case 1: // 学籍番号順にソートする
-			//sort_gakusei_bubble(num, gakusei, cunt);
+			sort_gakusei_bubble(num, gakusei, cunt);
 			break;
 		case 2:
-			//sort_gakusei_bubble(num, gakusei, cunt);
+			sort_gakusei_bubble(num, gakusei, cunt);
 			break;
 		case 3:
-			//sort_gakusei_bubble(num, gakusei, cunt);
+			sort_gakusei_bubble(num, gakusei, cunt);
 			break;
 		case 9:
 			return;
@@ -165,11 +165,11 @@ void g_srch_menu(Gakusei *gakusei, int cunt) {
 	scanf_s("%d", &method); // 1か2入力
 	switch (method) {
 	case 1:  // 線形探索で先頭から順番にkey_gakusei情報に合致する学生レコードを探す
-		//srch_gakusei_line(key, gakusei, 0, cunt-1, key_gakusei);
+		srch_gakusei_line(key, gakusei, 0, cunt-1, key_gakusei);
 		//disp_gakusei_record(gakusei[pos]); // 検索結果の学生レコード表示
 		break;
 	case 2:  // 二分探索でkey_gakusei情報に合致する学生レコードを探す
-		//srch_gakusei_bin(key, gakusei, 0, cunt-1, key_gakusei);
+		srch_gakusei_bin(key, gakusei, 0, cunt-1, key_gakusei);
 		//disp_gakusei_record(gakusei[pos]); // 検索結果の学生レコード表示
 		break;
 	default:
