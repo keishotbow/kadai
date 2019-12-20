@@ -104,7 +104,7 @@ void g_srch_menu(Gakusei *gakusei, int cunt) {
 	printf("５：氏名カナ(姓名)で検索\n");
 	printf("６：都道府県カナで検索\n");
 	printf("７：住所カナ(○○から始まる)で検索\n");
-	printf("８：都道府県カナ＋住所カナで探索\n");
+	printf("８：住所カナ(○○を含む)で探索\n");
 	printf("９：メインメニューに戻る");
 	printf("------------------------------------\n");
 	Gakusei key_gakusei; // 探したい学生キー
@@ -118,32 +118,32 @@ void g_srch_menu(Gakusei *gakusei, int cunt) {
 			int gakuno; scanf_s("%d", &gakuno);
 			key_gakusei.gakuno = gakuno;
 		case 2:
-			printf("性カナを入力してください：");
-			gets_s(buff, sizeof(buff));
-			strcpy_s(key_gakusei.namesei, buff);
-			break;
-		case 3:
-			printf("名カナを入力してください：");
-			gets_s(buff, sizeof(buff));
-			strcpy_s(key_gakusei.namesei, buff);
-			break;
-		case 4:
-			printf("性カナ、名カナを入力してください：");
-			gets_s(buff, sizeof(buff));
-			strcpy_s(key_gakusei.namesei, buff);
-			break;
-		case 5:
 			printf("郵便番号(前3桁)を入力してください：");
 			gets_s(buff, sizeof(buff));
 			strcpy_s(key_gakusei.namesei, buff);
 			break;
+		case 3:
+			printf("郵便番号(全7桁)を入力してください：");
+			gets_s(buff, sizeof(buff));
+			strcpy_s(key_gakusei.namesei, buff);
+			break;
+		case 4:
+			printf("氏名カナ(姓)を入力してください：");
+			gets_s(buff, sizeof(buff));
+			strcpy_s(key_gakusei.namesei, buff);
+			break;
+		case 5:
+			printf("氏名カナ(姓名)を入力してください：");
+			gets_s(buff, sizeof(buff));
+			strcpy_s(key_gakusei.namesei, buff);
+			break;
 		case 6:
-			printf("郵便番号(全桁)を入力してください：");
+			printf("都道府県カナを入力してください：");
 			gets_s(buff, sizeof(buff));
 			strcpy_s(key_gakusei.namesei, buff);
 			break;
 		case 7:
-			printf("都道府県カナを入力してください：");
+			printf("住所カナ(○○から始まる)を入力してください：");
 			gets_s(buff, sizeof(buff));
 			strcpy_s(key_gakusei.namesei, buff);
 			break;
