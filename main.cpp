@@ -65,26 +65,22 @@ void g_out_menu(Gakusei *gakusei, int cunt) {
 	printf("　　　　郵便番号準表示：３\n");
 	printf("　メインメニューに戻る：９\n");
 	printf("処理番号を選択してください：");
+	
+	// ココかえたよ！！！！！！！！！！！！！！！！！
 	int num;
 	while (true) {
 		scanf_s("%d", &num);
-		switch (num) {
-		case 1: // 学籍番号順にソートする
+		if (num == 1 || num == 2 || num == 3) {
 			sort_gakusei_bubble(num, gakusei, cunt);
-			break;
-		case 2:
-			sort_gakusei_bubble(num, gakusei, cunt);
-			break;
-		case 3:
-			sort_gakusei_bubble(num, gakusei, cunt);
-			break;
-		case 9:
+		}
+		else if (num == 9) {
 			return;
-			break;
-		default:
-			break;
+		}
+		else {
+			printf("1~3もしくは9を入力してください\n");
 		}
 	}
+	// ココまで！！！！！！！！！！！！！！！！！！！
 
 	int i = 0;
 	char title[100] = "＜＜＜学生情報一覧＞＞＞";
