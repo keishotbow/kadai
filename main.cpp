@@ -71,7 +71,7 @@ void g_out_menu(Gakusei *gakusei, int cunt) {
 		scanf_s("%d", &num);
 		if (num == 1 || num == 2 || num == 3) {
 			sort_gakusei_bubble(num, gakusei, cunt);
-			break;
+			break; // ‚±‚±‚Ébreak“ü‚ê‚È‚¢‚Æwhile”²‚¯‚ê‚È‚¢
 		}
 		else if (num == 9) {
 			return;
